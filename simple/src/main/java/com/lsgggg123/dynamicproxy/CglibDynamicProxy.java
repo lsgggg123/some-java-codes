@@ -1,5 +1,6 @@
 package com.lsgggg123.dynamicproxy;
 
+import com.lsgggg123.pojo.PoJo;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
@@ -33,30 +34,5 @@ public class CglibDynamicProxy {
         proxyPojo.setId(1L);
         proxyPojo.setName("proxy Pojo");
         System.out.println(proxyPojo.displayName());
-    }
-    
-    static class PoJo {
-        private Long id;
-        private String name;
-    
-        public Long getId() {
-            return id;
-        }
-    
-        public void setId(Long id) {
-            this.id = id;
-        }
-    
-        public String getName() {
-            return name;
-        }
-    
-        public void setName(String name) {
-            this.name = name;
-        }
-        
-        public String displayName() {
-            return "PoJo{" + "id:" + id + ", name:\"" + name + '\"' + '}';
-        }
     }
 }
