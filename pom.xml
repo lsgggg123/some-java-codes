@@ -19,6 +19,7 @@
         <module>simple</module>
         <module>simple-sdk</module>
         <module>simple-web</module>
+        <module>blank</module>
     </modules>
 
     <properties>
