@@ -20,6 +20,7 @@
         <module>simple-sdk</module>
         <module>simple-web</module>
         <module>blank</module>
+        <module>h2-database</module>
     </modules>
 
     <properties>
