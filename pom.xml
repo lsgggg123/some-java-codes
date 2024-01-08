@@ -21,7 +21,7 @@
         <module>simple-web</module>
         <module>blank</module>
         <module>h2-database</module>
-        <module>simple-htttp2</module>
+        <module>simple-http2</module>
     </modules>
 
     <properties>
