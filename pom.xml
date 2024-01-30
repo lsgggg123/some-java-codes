@@ -22,6 +22,7 @@
         <module>blank</module>
         <module>h2-database</module>
         <module>simple-http2</module>
+        <module>simple-reactive</module>
     </modules>
 
     <properties>
