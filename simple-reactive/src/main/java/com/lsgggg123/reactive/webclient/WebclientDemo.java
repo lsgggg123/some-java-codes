@@ -1,4 +1,4 @@
-package com.lsgggg123.webclient;
+package com.lsgggg123.reactive.webclient;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.WebClient;

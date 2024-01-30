@@ -1,4 +1,4 @@
-package com.lsgggg123.reactive;
+package com.lsgggg123.reactive.core;
 
 import reactor.core.publisher.Mono;
 
