@@ -1,12 +1,11 @@
 package com.lsgggg123.web.task;
 
 import com.lsgggg123.web.common.PrepareService;
-
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractTask implements BizTask {
     
-    @Resource
+    @Autowired
     protected PrepareService prepareService;
 
     @Override
