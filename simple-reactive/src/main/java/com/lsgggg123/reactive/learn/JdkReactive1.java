@@ -3,7 +3,7 @@ package com.lsgggg123.reactive.learn;
 import java.util.concurrent.Flow;
 import java.util.concurrent.SubmissionPublisher;
 
-public class JdkReactive {
+public class JdkReactive1 {
     public static void main(String[] args) throws InterruptedException {
         try (SubmissionPublisher<String> publisher = new SubmissionPublisher<>()) {
             Flow.Subscriber<String> subscriber = new Flow.Subscriber<>() {
@@ -41,6 +41,6 @@ public class JdkReactive {
             }
         }
 
-        Thread.sleep(2000L);
+        Thread.sleep(100L);
     }
 }
