@@ -6,15 +6,17 @@ import reactor.core.CoreSubscriber;
 
 @Slf4j
 public class SimpleSubscriber implements CoreSubscriber<String> {
-
+private Subscription subscription;
     @Override
     public void onSubscribe(Subscription subscription) {
-        subscription.request(2);
+        this.subscription = subscription;
+        subscription.request(1);
     }
 
     @Override
     public void onNext(String s) {
         log.info("订阅者收到消息: {}", s);
+        subscription.request(2);
     }
 
     @Override
