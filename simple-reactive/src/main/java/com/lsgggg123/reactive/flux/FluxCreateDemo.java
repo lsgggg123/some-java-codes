@@ -33,8 +33,6 @@ public class FluxCreateDemo {
         System.out.println("------------------------");
 
         // handle
-        Flux.just(1, 2, 3, 4, 5).handle((t, sink) -> {
-            sink.next(t * 2);
-        }).subscribe(System.out::println);
+        Flux.just(1, 2, 3, 4, 5).handle((t, sink) -> sink.next(t * 2)).subscribe(System.out::println);
     }
 }
