@@ -2,6 +2,7 @@ package com.lsgggg123.h2.dao;
 
 import com.lsgggg123.h2.dao.UserDaoImplTest.TestConfig;
 import com.lsgggg123.h2.mode.User;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.EmbeddedDataSourceConfiguration;
 import org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration;
@@ -15,11 +16,10 @@ import org.springframework.transaction.TransactionManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 @ContextConfiguration(classes = {TestConfig.class, SqlInitializationAutoConfiguration.class})
-public class UserDaoImplTest extends AbstractTestBase {
+public class UserDaoImplTest extends AbstractTestBase implements InitializingBean {
 
     @Autowired
     private DataSource dataSource;
@@ -28,8 +28,8 @@ public class UserDaoImplTest extends AbstractTestBase {
 
     private UserDao userDao;
 
-    @PostConstruct
-    public void init() {
+    @Override
+    public void afterPropertiesSet() throws Exception {
         jdbcTemplate = new JdbcTemplate(dataSource);
         userDao = new UserDaoImpl(jdbcTemplate);
     }
@@ -96,6 +96,8 @@ public class UserDaoImplTest extends AbstractTestBase {
         User user = userDao.getById(4L);
         Assert.assertNull(user);
     }
+
+
 
     @Configuration(proxyBeanMethods = false)
     @Import(EmbeddedDataSourceConfiguration.class)
