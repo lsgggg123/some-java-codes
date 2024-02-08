@@ -1,8 +1,11 @@
-package com.lsgggg123.reactive.learn;
+package com.lsgggg123.reactive.jdk;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Flow;
 import java.util.concurrent.SubmissionPublisher;
 
+@Slf4j
 public class JdkReactive1 {
     public static void main(String[] args) throws InterruptedException {
         try (SubmissionPublisher<String> publisher = new SubmissionPublisher<>()) {
@@ -12,25 +15,25 @@ public class JdkReactive1 {
 
                 @Override
                 public void onSubscribe(Flow.Subscription subscription) {
-                    System.out.println("Subscriber onSubscribe()");
+                    log.info("Subscriber onSubscribe()");
                     this.subscription = subscription;
                     subscription.request(1);
                 }
 
                 @Override
                 public void onNext(String item) {
-                    System.out.println("[" + Thread.currentThread().getName() + "] Subscriber onNext(): " + item);
+                    log.info("Subscriber onNext(): {}", item);
                     subscription.request(1);
                 }
 
                 @Override
                 public void onError(Throwable throwable) {
-                    System.out.println("Subscriber onError(): " + throwable.getMessage());
+                    log.error("Subscriber onError()", throwable);
                 }
 
                 @Override
                 public void onComplete() {
-                    System.out.println("Subscriber onComplete()");
+                    log.info("Subscriber onComplete()");
                 }
             };
 

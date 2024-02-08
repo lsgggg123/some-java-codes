@@ -1,4 +1,4 @@
-package com.lsgggg123.reactive.core;
+package com.lsgggg123.reactive;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Subscription;
@@ -7,6 +7,7 @@ import reactor.core.CoreSubscriber;
 @Slf4j
 public class SimpleSubscriber implements CoreSubscriber<String> {
 private Subscription subscription;
+
     @Override
     public void onSubscribe(Subscription subscription) {
         this.subscription = subscription;

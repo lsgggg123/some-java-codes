@@ -1,8 +1,11 @@
-package com.lsgggg123.reactive.learn;
+package com.lsgggg123.reactive.jdk;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Flow;
 import java.util.concurrent.SubmissionPublisher;
 
+@Slf4j
 public class JdkReactive2Processor {
 
     /**
@@ -27,12 +30,12 @@ public class JdkReactive2Processor {
 
         @Override
         public void onError(Throwable throwable) {
-            System.out.println("MyProcessor#onError(): " + throwable.getMessage());
+            log.error("MyProcessor#onError()", throwable);
         }
 
         @Override
         public void onComplete() {
-            System.out.println("MyProcessor#onComplete()");
+            log.info("MyProcessor#onComplete()");
         }
     }
 
@@ -54,18 +57,18 @@ public class JdkReactive2Processor {
 
                 @Override
                 public void onNext(String item) {
-                    System.out.println("[" + Thread.currentThread().getName() + "] Subscriber onNext(): " + item);
+                    log.error("Subscriber onNext(): {}" ,item);
                     subscription.request(1);
                 }
 
                 @Override
                 public void onError(Throwable throwable) {
-                    System.out.println("Final Subscriber onError(): " + throwable.getMessage());
+                    log.error("Final Subscriber onError()", throwable);
                 }
 
                 @Override
                 public void onComplete() {
-                    System.out.println("Final Subscriber onComplete()");
+                    log.info("Final Subscriber onComplete()");
                 }
             });
 

@@ -1,4 +1,4 @@
-package com.lsgggg123.reactive.core;
+package com.lsgggg123.reactive;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
