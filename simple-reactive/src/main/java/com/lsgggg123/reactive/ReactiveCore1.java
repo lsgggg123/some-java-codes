@@ -8,8 +8,6 @@ public class ReactiveCore1 {
             System.out.println("doOnTerminate");
         });
 
-        just.subscribe(System.out::println);
-
-
+        just.subscribe(new SimpleSubscriber<>());
     }
 }

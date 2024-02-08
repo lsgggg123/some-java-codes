@@ -5,8 +5,8 @@ import org.reactivestreams.Subscription;
 import reactor.core.CoreSubscriber;
 
 @Slf4j
-public class SimpleSubscriber implements CoreSubscriber<String> {
-private Subscription subscription;
+public class SimpleSubscriber<T> implements CoreSubscriber<T> {
+    private Subscription subscription;
 
     @Override
     public void onSubscribe(Subscription subscription) {
@@ -15,9 +15,9 @@ private Subscription subscription;
     }
 
     @Override
-    public void onNext(String s) {
+    public void onNext(T s) {
         log.info("订阅者收到消息: {}", s);
-        subscription.request(2);
+        subscription.request(1);
     }
 
     @Override

@@ -57,7 +57,7 @@ public class JdkReactive2Processor {
 
                 @Override
                 public void onNext(String item) {
-                    log.error("Subscriber onNext(): {}" ,item);
+                    log.error("Subscriber onNext(): {}", item);
                     subscription.request(1);
                 }
 

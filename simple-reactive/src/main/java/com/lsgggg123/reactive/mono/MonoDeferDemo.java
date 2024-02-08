@@ -29,7 +29,7 @@ public class MonoDeferDemo {
     static void deferContextual() {
         String key = "k";
         Mono<String> deferMono = Mono.deferContextual(ctx -> Mono.just("hello " + ctx.get(key)));
-                 // .contextWrite(ctx -> ctx.put(key, "World"));
+        // .contextWrite(ctx -> ctx.put(key, "World"));
 
         deferMono.subscribe(s -> log.info("consumer 订阅者收到消息: {}", s));
     }

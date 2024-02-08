@@ -11,7 +11,7 @@ public class MonoZipDemo {
         zipCombine();
         zipOnly();
     }
-    
+
     static void zipCombine() {
         Mono<Integer> m1 = Mono.just(1);
         Mono<String> m2 = Mono.just("a");

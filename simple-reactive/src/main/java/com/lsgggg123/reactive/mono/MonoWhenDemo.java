@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class MonoWhenDemo {
-    
+
     public static void main(String[] args) throws InterruptedException {
         Mono<Void> using = Mono.when(Mono.just(1), Mono.delay(Duration.of(1, ChronoUnit.SECONDS)), Mono.defer(() -> Mono.just(2)));
         using.subscribe(new CoreSubscriber<Void>() {
