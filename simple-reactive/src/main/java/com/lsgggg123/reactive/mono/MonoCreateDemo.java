@@ -20,7 +20,7 @@ public class MonoCreateDemo {
             sink.success("sink.finish");
         });
 
-        mono.subscribe(new SimpleSubscriber());
+        mono.subscribe(new SimpleSubscriber<>());
         mono.subscribe(s -> log.info("consumer 订阅者收到消息: {}", s));
     }
 }
