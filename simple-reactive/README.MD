@@ -1,6 +1,10 @@
-### docs
+### reactive docs
 
 https://docs.spring.io/spring-framework/reference/web/webflux/new-framework.html
+
+### r2dbc docs
+
+https://docs.spring.io/spring-data/relational/reference/r2dbc/entity-persistence.html
 
 ### video
 
