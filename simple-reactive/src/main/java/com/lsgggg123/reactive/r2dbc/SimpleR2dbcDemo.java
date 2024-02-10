@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 
 public class SimpleR2dbcDemo {
     public static void main(String[] args) throws InterruptedException {
-        /**
+        /*
          ConnectionFactoryOptions options = ConnectionFactoryOptions.builder()
          .option(DRIVER, "mysql")
          .option(HOST, "127.0.0.1")
@@ -19,7 +19,7 @@ public class SimpleR2dbcDemo {
          .option(SSL, false) // optional, default sslMode is "preferred", it will be ignored if sslMode is set
          .build();
          ConnectionFactory connectionFactory = ConnectionFactories.get(options);
-         **/
+        */
         MySqlConnectionConfiguration configuration = MySqlConnectionConfiguration
                 .builder()
                 .host("127.0.0.1")
