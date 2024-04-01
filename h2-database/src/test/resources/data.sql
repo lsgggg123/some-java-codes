@@ -1,4 +1,4 @@
-insert into user_table (`name`, `age`, `nick_name`) values ('Tom', 3, 'tom cat');
-insert into user_table (`name`, `age`, `nick_name`) values ('Jerry', 1, 'jerry mouse');
-insert into user_table (`name`, `age`, `nick_name`) values ('4update', 12, 'just 4 update');
-insert into user_table (`name`, `age`, `nick_name`) values ('4delete', 24, 'just 4 delete');
+insert into user_table (`name`, `age`, `nick_name`) values ('Tom', 1, 'tom cat');
+insert into user_table (`name`, `age`, `nick_name`) values ('Jerry', 2, 'jerry mouse');
+insert into user_table (`name`, `age`, `nick_name`) values ('Spike', 3, 'spike dog');
+insert into user_table (`name`, `age`, `nick_name`) values ('Tyke', 4, 'Tyke dog');

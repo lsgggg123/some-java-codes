@@ -40,7 +40,7 @@ public class UserDaoImplTest extends AbstractTestBase implements InitializingBea
         Assert.assertNotNull(user);
         Assert.assertEquals(user.getId().longValue(), 1L);
         Assert.assertEquals(user.getName(), "Tom");
-        Assert.assertEquals(user.getAge().intValue(), 3);
+        Assert.assertEquals(user.getAge().intValue(), 1);
         Assert.assertEquals(user.getNickName(), "tom cat");
     }
 
@@ -96,7 +96,6 @@ public class UserDaoImplTest extends AbstractTestBase implements InitializingBea
         User user = userDao.getById(4L);
         Assert.assertNull(user);
     }
-
 
 
     @Configuration(proxyBeanMethods = false)
